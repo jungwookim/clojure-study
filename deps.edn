@@ -1,0 +1,21 @@
+{:paths   ["src" "resources"]
+ :deps    {org.clojure/clojure    {:mvn/version "1.10.3"}
+           jp.nijohando/deferable {:mvn/version "0.2.1"}
+           metosin/malli          {:mvn/version "0.7.5"}
+           org.babashka/sci       {:mvn/version "0.2.8"}}
+
+ :aliases {:run-m   {:main-opts ["-m" "jungwoo.clojure-study"]}
+           :run-x   {:ns-default jungwoo.clojure-study
+                     :exec-fn    greet
+                     :exec-args  {:name "Clojure"}}
+           :test    {:extra-paths ["test"]
+                     :extra-deps  {org.clojure/test.check {:mvn/version "1.1.0"}}}
+           :runner  {:extra-deps {io.github.cognitect-labs/test-runner {:git/url "https://github.com/cognitect-labs/test-runner"
+                                                                                     :sha     "2d69f33d7980c3353b246c28f72ffeafbd9f2fab"}
+                                  :exec-fn    cognitect.test-runner.api/test}}
+           :uberjar {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.0.216"}}
+                     :exec-fn      hf.depstar/uberjar
+                     :exec-args    {:aot        true
+                                                         :jar        "clojure-study.jar"
+                                                         :main-class "jungwoo.clojure-study"
+                                                         :sync-pom   true}}}}
