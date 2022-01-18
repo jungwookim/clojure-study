@@ -78,7 +78,7 @@ c
              [["Great squid of Madrid, this is bad code:" bad]
               ["Sweet gorilla of Manila, this is good code:" good]])))
 
-(code-critic (1 + 1) (+ 1 1))
+;; (code-critic (1 + 1) (+ 1 1))
 
 (+ 1 1)
 
@@ -90,7 +90,6 @@ c
   (concat (list 'let ['message "Oh, big deal!"])
           stuff-to-do))
 
-(do (prn 1))
 (if true 1 2)
 (with-mischief
   (println "Here's how I feel about that thing you did: " message))

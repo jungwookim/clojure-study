@@ -132,10 +132,10 @@
   (insert-subsidy-push [] 1 "3")
   (insert-subsidy-push {} 1 "3")
 
-  (insert-subsidy-info {:id 1}
-                       :area            100)
-  (try (insert-subsidy-info {:id 1}
-                            :area            100)
+  (insert-subsidy-info {:id   1
+                        :area 100})
+  (try (insert-subsidy-info {:id   1
+                             :area 100})
        (catch Exception e (prn (me/error-message e))))
 
   (m/validate pants-schema {:id   1

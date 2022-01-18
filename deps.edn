@@ -1,8 +1,14 @@
 {:paths   ["src" "resources"]
- :deps    {org.clojure/clojure    {:mvn/version "1.10.3"}
-           jp.nijohando/deferable {:mvn/version "0.2.1"}
-           metosin/malli          {:mvn/version "0.7.5"}
-           org.babashka/sci       {:mvn/version "0.2.8"}}
+ :deps    {org.clojure/clojure     {:mvn/version "1.10.3"}
+           jp.nijohando/deferable  {:mvn/version "0.2.1"}
+           metosin/malli           {:mvn/version "0.7.5"}
+           metosin/muuntaja        {:mvn/version "0.6.8"}
+           metosin/reitit          {:mvn/version "0.5.15"}
+           ring-cors/ring-cors     {:mvn/version "0.1.13"}
+           ring/ring-jetty-adapter {:mvn/version "1.9.4"}
+           org.babashka/sci        {:mvn/version "0.2.8"}
+           mate-clj/mate-clj       {:mvn/version "1.0.0"}
+           com.crypticbutter/snoop {:mvn/version "21-353-alpha"}}
 
  :aliases {:run-m   {:main-opts ["-m" "jungwoo.clojure-study"]}
            :run-x   {:ns-default jungwoo.clojure-study
