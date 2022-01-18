@@ -1,4 +1,4 @@
-(ns jungwoo.malli2
+(ns jungwoo.malli.malli2
   (:require [malli.core :as m]
             [malli.dev :as dev]
             [malli.error :as me]

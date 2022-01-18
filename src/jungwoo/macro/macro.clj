@@ -1,4 +1,4 @@
-(ns jungwoo.macro)
+(ns jungwoo.macro.macro)
 
 '+
 (+ 1 2)
@@ -120,4 +120,3 @@ c
 (meta #'five)
 
 (+ 1 five-str)
-

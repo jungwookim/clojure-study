@@ -1,4 +1,4 @@
-(ns jungwoo.malli
+(ns jungwoo.malli.malli
   (:require [malli.core :as m]
             [malli.dev :as dev]
             [malli.error :as me]
@@ -7,7 +7,6 @@
             [malli.transform :as mt]
             [malli.dev.pretty :as pretty]))
    
-
 
 (defn foo-meta
   "schema via var metadataz"
