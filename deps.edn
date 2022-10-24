@@ -1,5 +1,6 @@
 {:paths   ["src" "resources"]
- :deps    {org.clojure/clojure     {:mvn/version "1.10.3"}
+ :deps    {org.clojure/clojure     {:mvn/version "1.11.1"}
+           org.clojure/core.async  {:mvn/version "1.5.648"}
            jp.nijohando/deferable  {:mvn/version "0.2.1"}
            metosin/malli           {:mvn/version "0.7.5"}
            metosin/muuntaja        {:mvn/version "0.6.8"}
