@@ -22,41 +22,47 @@
   {:malli/schema [:=> [:cat :int] [:and int? [:> 18]]]}
   [x]
   (* x x))
-(dev/start!)
 
+(meta (foo-meta-2 2))
 
-(-> [:and
-     [:map
-      [:x int?]
-      [:y int?]]
-     [:fn '(fn [{:keys [x y]}] (> x y))]]
-    (edn/write-string)
-    (doto prn) ; => "[:and [:map [:x int?] [:y int?]] [:fn (fn [{:keys [x y]}] (> x y))]]"
-    (edn/read-string)
-    (doto (-> (m/validate {:x 0
-                           :y 1}) prn)) ; => false
-    (doto (-> (m/validate {:x 2
-                           :y 1}) prn))) ; => true
-;; (-> m/default-registry (mr/schemas) (clojure.pprint/pprint))
+(defn test-fn [x]
+  {:pre [(m/validate int? x)]}
+  x)
 
-(def Adult
-  [:map {:registry {::age [:and int? [:> 18]]}}
-   [:age ::age]])
+(test-fn "2")
+
+;; (-> [:and
+;;      [:map
+;;       [:x int?]
+;;       [:y int?]]
+;;      [:fn '(fn [{:keys [x y]}] (> x y))]]
+;;     (edn/write-string)
+;;     (doto prn) ; => "[:and [:map [:x int?] [:y int?]] [:fn (fn [{:keys [x y]}] (> x y))]]"
+;;     (edn/read-string)
+;;     (doto (-> (m/validate {:x 0
+;;                            :y 1}) prn)) ; => false
+;;     (doto (-> (m/validate {:x 2
+;;                            :y 1}) prn))) ; => true
+;; ;; (-> m/default-registry (mr/schemas) (clojure.pprint/pprint))
+
+;; (def Adult
+;;   [:map {:registry {::age [:and int? [:> 18]]}}
+;;    [:age ::age]])
 
 
 ;; (mg/generate Adult {:size 10
 ;;                     :seed 1})
 ;; (m/default-schemas)
 
-(-> Adult
-    (malli.edn/write-string)
-    (malli.edn/read-string)
-    (m/validate {:age 46}))
+;; (-> Adult
+;;     (malli.edn/write-string)
+;;     (malli.edn/read-string)
+;;     (m/validate {:age 46}))
 
 ;; (m/validate Adult {:age 46})
 
 
-(dev/start!)
+;; (dev/start!)
 (comment  
   (foo-declare-2 2)
   (foo-declare-2 3)

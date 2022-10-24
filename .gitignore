@@ -19,3 +19,5 @@
 .clj-kondo
 .cpcache
 .lsp
+.DS_Store
+vs-code.edn

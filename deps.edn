@@ -8,7 +8,11 @@
            ring/ring-jetty-adapter {:mvn/version "1.9.4"}
            org.babashka/sci        {:mvn/version "0.2.8"}
            mate-clj/mate-clj       {:mvn/version "1.0.0"}
-           com.crypticbutter/snoop {:mvn/version "21-353-alpha"}}
+           com.crypticbutter/snoop {:mvn/version "21-353-alpha"}
+           funcool/urania          {:mvn/version "0.2.0"}
+           funcool/promesa         {:mvn/version "7.0.443"}
+           green-labs/gosura       {:git/url "https://github.com/green-labs/gosura"
+                                    :git/sha "d5860c57a41e0a0b9d9eb32168d05df70717e4d2"}}
 
  :aliases {:run-m   {:main-opts ["-m" "jungwoo.clojure-study"]}
            :run-x   {:ns-default jungwoo.clojure-study
@@ -17,11 +21,11 @@
            :test    {:extra-paths ["test"]
                      :extra-deps  {org.clojure/test.check {:mvn/version "1.1.0"}}}
            :runner  {:extra-deps {io.github.cognitect-labs/test-runner {:git/url "https://github.com/cognitect-labs/test-runner"
-                                                                                     :sha     "2d69f33d7980c3353b246c28f72ffeafbd9f2fab"}
-                                  :exec-fn    cognitect.test-runner.api/test}}
+                                                                        :sha     "2d69f33d7980c3353b246c28f72ffeafbd9f2fab"}
+                                  :exec-fn                             cognitect.test-runner.api/test}}
            :uberjar {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.0.216"}}
                      :exec-fn      hf.depstar/uberjar
                      :exec-args    {:aot        true
-                                                         :jar        "clojure-study.jar"
-                                                         :main-class "jungwoo.clojure-study"
-                                                         :sync-pom   true}}}}
+                                    :jar        "clojure-study.jar"
+                                    :main-class "jungwoo.clojure-study"
+                                    :sync-pom   true}}}}
